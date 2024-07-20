@@ -1,3 +1,4 @@
+*.pyc
 /.venv
 /AnaliseDeDados.code-workspace
 /requirements.txt
