@@ -6,10 +6,11 @@ from selenium.webdriver import Chrome as ChromeDriver
 logger: Logger | None = None
 
 
-def setup_driver() -> ChromeDriver:
+def setup_driver(headless: bool) -> ChromeDriver:
     chrome_driver_path = "D:\\Program Files\\ChromeDriver\\chromedriver.exe"
     chrome_options = DriveOptions()
-    # chrome_options.add_argument("--headless")
+    if headless:
+        chrome_options.add_argument("--headless")
     service = DriveService(executable_path=chrome_driver_path)
     if logger:
         logger.info("connection created and opened")
